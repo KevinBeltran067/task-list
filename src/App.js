@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import ToDoList from "./components/ToDoList";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  const tareas =[
+    {id:1,
+    nombreTarea:"Curso"},
+    {id:2,
+    nombreTarea:"Ada"},
+    {id:2,
+    nombreTarea:"School"},
+    {id:2,
+    nombreTarea:"React"}
+  ]
+  return (<>
+    <div className="todo-list-paper">
+    <h2 className="todo-list-title">To Do List</h2>
+    {
+      tareas.map(
+      (tarea) =>
+      (<ToDoList
+        key={tarea.id}
+        id={tarea.id}
+        nombreTarea={tarea.nombreTarea}
+      />)
+      ) 
+    }
     </div>
-  );
+    </>);
 }
 
 export default App;
