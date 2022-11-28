@@ -4,6 +4,7 @@
     margin: auto;
     margin-top: 5vh;
     border: 1px solid black;
+    text-align: center;
 }
 
 .todo-list-check{
