@@ -1,12 +1,23 @@
 import "../styles/ToDoList.css";
 
-function ToDoList({id,nombreTarea}){
-    return(
-        <>
-        <input type="checkbox" name={id} className="todo-list-check" />
-        <label htmlFor={id} className="todo-list-content">{nombreTarea}</label><br />
+function ToDoList({id,nombreTarea,estadoTarea}){
+
+    return(estadoTarea
+        ? <>
+            <h3 className="todo-list-title">Completado</h3>
+            
+            <label htmlFor={id} className="todo-list-content">{nombreTarea}</label><br />
         </>
-    );
+        : <>
+            <h3 className="todo-list-title">Pendiente</h3>
+            
+            <label htmlFor={id} className="todo-list-content">{nombreTarea}</label><br />
+        </> );
 }
 
-export default ToDoList;
+/*
+Para colocar esta linea y quede en orden, borrar "text-align: center;" de ".todo-list-paper"
+<input type="checkbox" name={id} className="todo-list-check" />
+*/
+
+export default ToDoList; 
