@@ -1,5 +1,8 @@
+import { useState } from "react";
+
 export default function useCreateTask(){
-    const tareas =[
+    
+    const tarea =[
         {id: 1,
         nombreTarea: "Curso",
         estadoTarea: true},
@@ -13,9 +16,11 @@ export default function useCreateTask(){
           nombreTarea: "React",
           estadoTarea: true},
         {id: 5,
-          nombreTarea: "React",
+          nombreTarea: "Node",
            estadoTarea: true}  
       ]
 
+    const [tareas, setTareas] = useState(tarea);
+    
     return tareas;
 }
